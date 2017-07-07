@@ -14239,7 +14239,21 @@ oX2rGgAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> - 1. we need train/test data set, we must have some data to predict, which is train data set. The reason we need test data set is that, we need other "isolated" data set to test out predict. if we don't have test data set, the predict metrics can be perfect, but when it comes to production, it may be proved wrong predicction. - 2. we don't know what's the best ratio of train/test data set. So we may try some different radio and see the performance.</p>
+<p><strong>Answer: </strong></p>
+<ul>
+<li><ol>
+<li>we need train/test data set, we must have some data to predict, which is train data set. The reason we need test data set is that, we need other "isolated" data set to test out predict. if we don't have test data set, the predict metrics can be perfect, but when it comes to production, it may be proved wrong predicction. </li>
+</ol>
+</li>
+<li><ol>
+<li>we don't know what's the best ratio of train/test data set. So we may try some different radio and see the performance.</li>
+</ol>
+</li>
+<li><ol>
+<li>If you take a given data instance and ask for it’s classification, you can look that instance up in the dataset and report the correct result every time.</li>
+</ol>
+</li>
+</ul>
 
 </div>
 </div>
@@ -15798,7 +15812,7 @@ YII=
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
 <ul>
-<li>High bias</li>
+<li>High bias, the gap is small (less than 0.1) and both scores are low (around 0.4, 0.5), meaning the errors are high.</li>
 <li>High variance, there is a big gap between training scroe(around 1) and validation score(around 0.7)</li>
 </ul>
 
@@ -15897,7 +15911,7 @@ YII=
 <p><strong>Answer: </strong></p>
 <ul>
 <li>K-fold cross validation is one way to improve over the holdout method. The data set is divided into k subsets, and the holdout method is repeated k times. Each time, one of the k subsets is used as the test set and the other k-1 subsets are put together to form a training set. Then the average error across all k trials is computed. </li>
-<li>Grid search means you have a set of models (which differ from each other in their parameter values, which lie on a grid). What you do is you then train each of the models and evaluate it using cross-validation. You then select the one that performed best.</li>
+<li>With k-fold CV, all data is used for training and all data is used for validation exactly once. Suppose there is no cross-validated set. Then Grid Search may choose values of parameters than work well (score highly) for a particular validation/test set but don't generalise. With a cross-validated set, there is more test data and the model is tested more times because the model is validated k times (each time on different data). So if the averaged score is high, the model (with parameters chosen from Grid Search) is more likely to be generalisable.</li>
 </ul>
 
 </div>
