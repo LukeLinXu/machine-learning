@@ -101,7 +101,7 @@ class Environment(object):
 
         self.primary_agent = agent
         agent.primary_agent = True
-        self.enforce_deadline = enforce_deadline
+        self.enforce_deadline = True
 
     def reset(self, testing=False):
         """ This function is called at the beginning of a new trial. """
