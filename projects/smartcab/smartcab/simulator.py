@@ -85,7 +85,7 @@ class Simulator(object):
 
         # Setup metrics to report
         self.log_metrics = log_metrics
-        self.optimized = optimized
+        self.optimized = True
         
         if self.log_metrics:
             a = self.env.primary_agent
@@ -108,7 +108,7 @@ class Simulator(object):
             self.log_writer = csv.DictWriter(self.log_file, fieldnames=self.log_fields)
             self.log_writer.writeheader()
 
-    def run(self, tolerance=0.05, n_test=10):
+    def run(self, tolerance=0.1, n_test=1000):
         """ Run a simulation of the environment. 
 
         'tolerance' is the minimum epsilon necessary to begin testing (if enabled)

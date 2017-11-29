@@ -18,6 +18,7 @@ class LearningAgent(Agent):
         self.Q = dict()          # Create a Q-table which will be a dictionary of tuples
         self.epsilon = epsilon   # Random exploration factor
         self.alpha = alpha       # Learning factor
+        self.ttime = 1
 
         ###########
         ## TO DO ##
@@ -44,7 +45,8 @@ class LearningAgent(Agent):
             self.alpha = 0
         else:
             if self.epsilon != 0:
-                self.epsilon = self.epsilon - 0.05
+                self.epsilon = 0.99*self.epsilon
+                self.ttime = self.ttime + 1
 
         return None
 
