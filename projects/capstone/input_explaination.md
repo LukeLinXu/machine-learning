@@ -1,1 +1,0 @@
-Since the images are coming from real cases, so I just provide part of my own receipts. I am not able to provide all the data set I'm using, cuz I need to protect our users privacy.
