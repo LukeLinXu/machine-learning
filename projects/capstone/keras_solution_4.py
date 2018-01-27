@@ -25,7 +25,7 @@ else:
 
 BATCH_SIZE = 8
 gen = ImageDataGenerator()
-test_batches = gen.flow_from_directory("test", model.input_shape[1:3], batch_size=BATCH_SIZE,
+test_batches = gen.flow_from_directory("../../../input/test", model.input_shape[1:3], batch_size=BATCH_SIZE,
                                        shuffle=False, class_mode=None)
 
 
@@ -35,7 +35,7 @@ if bottleneck:
     y_test = model.predict(X_test)
 
 else:
-    y_test = model.predict_generator(test_batches, test_batches.nb_sample)
+    y_test = model.predict_generator(test_batches, test_batches.samples)
 
 
 import pandas as pd
